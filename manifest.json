@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Unblock Paste",
   "description": "Unblock pasting.",
-  "version": "1.1",
+  "version": "1.2",
   "permissions": ["activeTab", "scripting"],
   "author": "Naitik Shah <n@daaku.org>",
   "homepage_url": "https://github.com/daaku/unblock-paste",

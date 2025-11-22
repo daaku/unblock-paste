@@ -1,6 +1,18 @@
-browser.browserAction.onClicked.addListener(tab => {
-  browser.scripting.executeScript({
+const browserAPI = typeof browser !== 'undefined' ? browser : chrome
+
+function inside() {
+  const h = e => {
+    e.stopImmediatePropagation()
+    return true
+  }
+  ;['copy', 'cut', 'paste'].forEach(name => {
+    document.addEventListener(name, h, true)
+  })
+}
+
+browserAPI.action.onClicked.addListener(tab => {
+  browserAPI.scripting.executeScript({
     target: { tabId: tab.id, allFrames: true },
-    files: ['content.js'],
+    func: inside,
   })
 })

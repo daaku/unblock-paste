@@ -1,25 +1,13 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Unblock Paste",
   "description": "Unblock pasting.",
-  "version": "1.2",
+  "version": "1.4",
   "permissions": ["activeTab", "scripting"],
   "author": "Naitik Shah <n@daaku.org>",
   "homepage_url": "https://github.com/daaku/unblock-paste",
-  "background": {
-    "scripts": ["bg.js"]
-  },
-  "browser_action": {
-    "default_icon": "icon.svg",
-    "default_title": "Unblock Paste"
-  },
-  "icons": {
-    "48": "icon.svg",
-    "128": "icon.svg"
-  },
-  "browser_specific_settings": {
-    "gecko": {
-      "id": "unblock-paste@daaku.org"
-    }
-  }
+  "background": { "service_worker": "bg.js" },
+  "action": { "default_icon": "icon.png", "default_title": "Unblock Paste" },
+  "icons": { "48": "icon.png", "128": "icon.png" },
+  "browser_specific_settings": { "gecko": { "id": "unblock-paste@daaku.org" } }
 }
